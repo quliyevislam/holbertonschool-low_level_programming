@@ -7,9 +7,9 @@
 int main(void)
 {
 
-    for(int l = 0; l < 26; l++)
-        putchar( 'a' + l );
-    putchar( '\n' );
+	for (int i = 0; i < 26; i++)
+		putchar('a' + i);
+	putchar('\n');
 
 	return (0);
 }
