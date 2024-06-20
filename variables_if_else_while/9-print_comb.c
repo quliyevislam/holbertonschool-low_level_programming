@@ -12,10 +12,10 @@ int main(void)
 	{
 		putchar('0' + i);
 
-		putchar(' ');
-
 		if (i == 9)
 			continue;
+
+		putchar(' ');
 
 		putchar(',');
 	}
