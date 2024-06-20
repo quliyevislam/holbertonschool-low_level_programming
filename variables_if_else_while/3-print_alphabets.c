@@ -14,7 +14,9 @@ int main(void)
 		i++;
 	}
 
-	while (i < 52)
+	i = 0;
+
+	while (i < 26)
 	{
 		putchar('A' + i);
 		i++;
