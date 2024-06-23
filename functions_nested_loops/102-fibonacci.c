@@ -7,8 +7,8 @@
 int main(void)
 {
 	int count;
-	int F1 = 0;
-	int F2 = 1;
+	unsigned long F1 = 0;
+	unsigned long F2 = 1;
 	unsigned long sum;
 
 	for (count = 0; count < 50; count++)
