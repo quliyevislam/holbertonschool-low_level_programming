@@ -9,12 +9,12 @@ int main(void)
 	int count;
 	int F1 = 0;
 	int F2 = 1;
-	int sum;
+	unsigned long sum;
 
 	for (count = 0; count < 50; count++)
 	{
 		sum = F1 + F2;
-		printf("%d", sum);
+		printf("%lu", sum);
 
 		F1 = F2;
 		F2 = sum;
