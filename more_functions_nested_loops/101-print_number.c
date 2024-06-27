@@ -35,6 +35,6 @@ void print_number(int n)
 		_putchar('0' + temp);
 	}
 
-	if (N % 10 == 0)
+	if (N % 10 == 0 && N !== 0)
 		_putchar('0');
 }
