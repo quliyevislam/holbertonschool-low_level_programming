@@ -6,9 +6,9 @@
  */
 void print_number(int n)
 {
-	int reverse = 0;
-	int temp;
-	int N;
+	unsigned int reverse = 0;
+	unsigned int temp;
+	unsigned int N;
 
 	if (n == 0)
 		_putchar('0');
