@@ -10,6 +10,13 @@ void print_number(int n)
 	int x = 1;
 	int digit;
 
+	if (n == -2147483648)
+	{
+	_putchar('-');
+	_putchar('2');
+	n = 147483648;
+	}
+
 	if (n < 0)
 	{
 		n *= -1;
