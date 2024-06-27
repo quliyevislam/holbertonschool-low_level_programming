@@ -6,25 +6,26 @@
  */
 void print_number(int n)
 {
-	unsigned int reverse = 0;
-	unsigned int temp;
-	unsigned int N;
-
-	if (n == 0)
-		_putchar('0');
-
 	if (n < 0)
 	{
 		n *= -1;
 		_putchar('-');
 	}
 
-	N = n;
+	unsigned int reverse = 0;
+	unsigned int temp;
+	unsigned int N;
+	unsigned int new_n = (unsigned int)n;
 
-	while (n != 0)
+	if (new_n == 0)
+		_putchar('0');
+
+	N = new_n;
+
+	while (new_n != 0)
 	{
-		temp = n % 10;
-		n = n / 10;
+		temp = new_n % 10;
+		new_n = new_n / 10;
 		reverse  = reverse * 10 + temp;
 	}
 
