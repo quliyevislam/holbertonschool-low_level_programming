@@ -17,7 +17,7 @@ int main(void)
 		}
 	}
 
-	printf("%d\n", i);	
+	printf("%d\n", i - 1);
 
 	return (0);
 }
