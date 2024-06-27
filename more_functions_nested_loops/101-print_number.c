@@ -25,7 +25,7 @@ void print_number(int n)
 		x = x * 10;
 	}
 
-	while (divider != 0)
+	while (x != 0)
 	{
 		digit = n / x;
 		n = n - digit * x;
