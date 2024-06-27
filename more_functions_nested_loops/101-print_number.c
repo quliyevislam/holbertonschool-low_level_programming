@@ -8,6 +8,7 @@ void print_number(int n)
 {
 	int reverse = 0;
 	int temp;
+	int N;
 
 	if (n == 0)
 		_putchar('0');
@@ -17,6 +18,8 @@ void print_number(int n)
 		n *= -1;
 		_putchar('-');
 	}
+
+	N = n;
 
 	while (n != 0)
 	{
@@ -31,4 +34,7 @@ void print_number(int n)
 		reverse = reverse / 10;
 		_putchar('0' + temp);
 	}
+
+	if (N % 10 == 0)
+		_putchar('0');
 }
