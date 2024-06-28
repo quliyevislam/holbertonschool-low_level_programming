@@ -13,16 +13,11 @@ void puts_half(char *str)
 	{
 	i++;
 	}
-if (i % 2 == 1)
-{
-	k = (i - 1)/2;
-}
-else
-{
-	k = i/2;
-}
-	for (j = k; j < i; j++)
+
+	for (j = i / 2; j < i; j++)
 	{
+		if (*(str + j) == 'o')
+			continue;
 	_putchar(*(str + j));
 	}
 
