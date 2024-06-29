@@ -10,7 +10,7 @@ int _atoi(char *s)
 {
 	int i;
 	int k = 1;
-	int num = 0;
+	unsigned int num = 0;
 	int c = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -23,7 +23,7 @@ int _atoi(char *s)
 	}
 
 	if (c % 2 == 1)
-		k = -1;
+		_putchar('-');
 
 	return (num * k);
 }
