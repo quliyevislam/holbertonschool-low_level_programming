@@ -1,14 +1,10 @@
 #include "main.h"
 /**
  * _strncat - concatenates two strings.
- *
  * @dest: pointer to a char.
- *
- * @src: pointer to a char.
- *
+ * @src: pointer to a cahr.
  * @n: int.
- *
- * Return: pointer to a char.
+ * Return: dest.
  */
 char *_strncat(char *dest, char *src, int n)
 {
@@ -18,12 +14,12 @@ char *_strncat(char *dest, char *src, int n)
 
 	while (dest[i] != '\0')
 	{
-		i++;
+	i++;
 	}
 
-	for (j = i, k = 0; k < n; j++, k++)
+	for (j = i, k = 0; k < n && src[k] != '\0'; j++, k++)
 	{
-		dest[j] = src[k];
+	dest[j] = src[k];
 	}
 
 	return (dest);
