@@ -23,7 +23,7 @@ int _atoi(char *s)
 	}
 
 	if (c % 2 == 1)
-		_putchar('-');
+		k = -1;
 
 	return (num * k);
 }
