@@ -15,36 +15,34 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
     int len1 = strlen(n1);
     int len2 = strlen(n2);
-    int i, j, k;
-    int carry = 0;
-    int sum;
-    
-    if (size_r <= len1 || size_r <= len2)
+    int carry = 0, sum;
+    int i = len1 - 1, j = len2 - 1, k = size_r - 2;
+
+    // Ensure buffer size is sufficient
+    if (size_r <= len1 + 1 || size_r <= len2 + 1)
         return 0;
 
-    r[size_r - 1] = '\0';
-    k = size_r - 2;
+    r[size_r - 1] = '\0';  // Null-terminate the result buffer
 
-    for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--, k--) {
+    // Add digits from the end of n1 and n2
+    while (i >= 0 || j >= 0 || carry)
+    {
         if (k < 0)
-            return 0;
-        
+            return 0;  // Buffer overflow
+
         sum = carry;
         if (i >= 0)
-            sum += n1[i] - '0';
+            sum += n1[i--] - '0';
         if (j >= 0)
-            sum += n2[j] - '0';
+            sum += n2[j--] - '0';
 
         carry = sum / 10;
-        r[k] = (sum % 10) + '0';
+        r[k--] = (sum % 10) + '0';
     }
 
+    // Shift result to the beginning of the buffer if necessary
     if (k < 0)
-        return 0;
+        return 0;  // Buffer overflow
 
-    if (r[k] == '0')
-        k++;
-
-    return r + k;
+    return r + k + 1;
 }
-
