@@ -13,15 +13,15 @@ int N;
 
 	if (n == -2147483648)
 	{
-	putchar('-');
-	putchar('2');
+	_putchar('-');
+	_putchar('2');
 	n = 147483648;
 	}
 
 	if (n < 0)
 	{
 		n *= -1;
-		putchar('-');
+		_putchar('-');
 	}
 
 	N = n;
@@ -38,6 +38,6 @@ int N;
 		digit = n / x;
 		n = n - digit * x;
 		x = x / 10;
-		putchar('0' + digit);
+		_putchar('0' + digit);
 	}
 }
