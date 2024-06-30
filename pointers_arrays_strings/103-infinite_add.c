@@ -18,11 +18,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     int carry = 0, sum;
     int i = len1 - 1, j = len2 - 1, k = size_r - 2;
 
-    if (size_r <= len1 + 1 || size_r <= len2 + 1 || size_r < len1 + len2 + 2)
+    
+    if (size_r <= len1 + 1 || size_r <= len2 + 1)
         return 0;
 
     r[size_r - 1] = '\0';
-
+    
     while (i >= 0 || j >= 0 || carry)
     {
         if (k < 0)
@@ -40,9 +41,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
     k++;
 
-    if (k < 0 && (size_r - 1 - k) > size_r)
-        return 0;
+    if (r[k] == '0')
+        k++;
 
     return r + k;
 }
-
