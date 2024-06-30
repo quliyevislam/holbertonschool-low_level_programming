@@ -7,7 +7,7 @@
 void print_number(int n)
 {
 
-int N;
+	int N;
 	int x = 1;
 	int digit;
 
