@@ -19,6 +19,8 @@ for (i = 0; haystack[i]; i++)
     return haystack + i;
    
     k = 0;
+
+return 0;
 }
     
     
