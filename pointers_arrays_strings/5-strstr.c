@@ -10,7 +10,8 @@ for (i = 0; haystack[i]; i++)
 {
     for (j = 0; needle[j]; j++)
     {
-        
+        if (!haystack[i + j])
+		return 0;
         if (haystack[i + j] == needle[j])
         k++;
         
@@ -21,5 +22,7 @@ for (i = 0; haystack[i]; i++)
     k = 0;
 
 }
+
+return 0;
 }    
     
