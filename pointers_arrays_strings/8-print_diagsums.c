@@ -7,6 +7,7 @@ void print_num(long num)
 {
 	int temp;
 	long rev = 0;
+	int cp = num;
 
 	if (num < 0)
 	{
@@ -26,6 +27,9 @@ void print_num(long num)
 		_putchar('0' + rev % 10);
 		rev = rev / 10;
 	}
+
+	if (cp % 10 == 0)
+		_putchar('0');
 }
 /**
  * print_diagsums - prints the sum of the two
