@@ -3,10 +3,16 @@
  * print_num - prints the int num.
  * @num: int.
  */
-void print_num(int num)
+void print_num(long num)
 {
 	int temp;
 	long rev = 0;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num = num * -1;
+	}
 
 	while (num != 0)
 	{
