@@ -30,7 +30,6 @@ void print_num(int num)
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int j;
 	long sum = 0;
 	long rev = 0;
 	int temp;
