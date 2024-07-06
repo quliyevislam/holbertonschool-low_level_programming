@@ -17,7 +17,7 @@ void print_num(int num)
 
 	while (rev != 0)
 	{
-		putchar('0' + rev % 10);
+		_putchar('0' + rev % 10);
 		rev = rev / 10;
 	}
 }
@@ -50,8 +50,8 @@ void print_diagsums(int *a, int size)
 	print_num(sum);
 
 	sum = 0;
-	putchar(',');
-	putchar(' ');
+	_putchar(',');
+	_putchar(' ');
 
 	for (i = size - 1; i < size * size - size + 1; i += (size - 1))
 	{
@@ -60,5 +60,5 @@ void print_diagsums(int *a, int size)
 
 	print_num(sum);
 
-	putchar('\n');
+	_putchar('\n');
 }
