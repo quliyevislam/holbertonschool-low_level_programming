@@ -6,7 +6,7 @@
 void print_num(int num)
 {
 	int temp;
-	int rev = 0;
+	long rev = 0;
 
 	while (num != 0)
 	{
@@ -37,13 +37,6 @@ void print_diagsums(int *a, int size)
 	for (i = 0; i < size * size; i += (size + 1))
 	{
 		sum = sum + *(a + i);
-	}
-
-	while (sum != 0)
-	{
-		temp = sum % 10;
-		sum = sum / 10;
-		rev = rev * 10 + temp;
 	}
 
 	print_num(sum);
