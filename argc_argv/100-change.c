@@ -34,7 +34,7 @@ for (i = 0; i < 5; i++)
     
 }
 
-printf("%d", count);
+printf("%d\n", count);
 
     return (0);
 }
