@@ -5,7 +5,7 @@
  * @x: int.
  * Return: natural square root of a number.
  */
-int _sqrt_r(int S, int x)
+int _sqrt_r(int S, long x)
 {
 	if (x * x <= S)
 		return (x);
