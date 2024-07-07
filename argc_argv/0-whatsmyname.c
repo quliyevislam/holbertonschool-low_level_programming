@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
 
-printf("%s\n",*argv);
+printf("%s\n",*argv[arc - 1]);
 
 return (0);
 }
