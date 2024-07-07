@@ -6,7 +6,8 @@
  * @j: int.
  * Return: 1 or 0.
  */
-int is_pal(char *s, int i, int j){
+int is_pal(char *s, int i, int j)
+{
 	if (i >= j)
 		return (1);
 
@@ -26,7 +27,7 @@ int str_len(char *s, int l)
 	if (s[l] == '\0')
 		return (l);
 
-	return ((str_len(s, l+1)));
+	return ((str_len(s, l + 1)));
 }
 /**
  * is_palindrome - returns 1 if a string is a palindrome and 0 if not.
