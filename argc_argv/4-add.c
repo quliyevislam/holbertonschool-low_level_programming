@@ -20,7 +20,7 @@ for (i = 1; i < argc; i++)
 str = argv[i];
 for (j = 0; str[j]; j++)
 {
-if (*str[j] < '0' && *str[j] > '9')
+if (*(str + j) < '0' || *(str + j) > '9')
 {
 printf("Error\n");
 return (1);
