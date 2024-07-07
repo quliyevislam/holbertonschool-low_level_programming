@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * main - multiplies two numbers.
+ * @argc: int.
+ * @argv: pointer to a char array.
+ * Return: 0.
+ */
+int main(int argc, char *argv[])
+{
+	int sum;
+
+	if (argc != 2)
+	{
+		printf("Error");
+		return (0);
+	}
+
+	sum = atio(*argv[1]) + atio(*argv[2];)
+	printf("%d\n", sum);
+
+	return (0);
+}
