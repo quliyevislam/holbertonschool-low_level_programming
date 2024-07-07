@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
 
 printf("%s\n",*argv);
 
-return (argc);
+return (0);
 }
