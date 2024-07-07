@@ -7,8 +7,12 @@
  */
 int main(int argc, char *argv[])
 {
-	*argv != '\0';
-	printf("%d\n", argc);
+
+	int i;
+
+	for (i = 0;*argv[i] && i < argc; i++)
+
+	printf("%d", i + 1);
 
 	return (0);
 }
