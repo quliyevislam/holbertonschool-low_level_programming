@@ -17,7 +17,7 @@ return (0);
 }
 for (i = 1; i < argc; i++)
 {
-srt = argv[i];
+str = argv[i];
 for (j = 0; str[j]; j++)
 {
 if (str[j] < '0' && str[j] > '9')
