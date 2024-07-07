@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	sum = atio(*argv[1]) + atio(*argv[2]);
+	sum = atoi(*argv[1]) + atoi(*argv[2]);
 	printf("%d\n", sum);
 
 	return (0);
