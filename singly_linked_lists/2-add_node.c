@@ -8,12 +8,12 @@
  *
  * Return: the length of the input string
  */
-unsigned int _strlen(char *str)
+unsigned int _strlen(const char *str)
 {
-	unsigned int len = 0
+	unsigned int len = 0;
 
-	while (*str)
-		str++, len++;
+	while (str[len])
+		len++;
 
 	return (len);
 }
