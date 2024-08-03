@@ -4,6 +4,7 @@
 /**
  * get_dnodeint_at_index -  returns the nth node of a dlistint_t linked list
  * @head: address of the head of the list
+ * @index: index of the desired node
  *
  * Return: the nth node or if the node does not exist, return NULL
  */
