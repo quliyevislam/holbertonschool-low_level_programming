@@ -1,6 +1,8 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+typedef size_t unsigned int;
+
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer
