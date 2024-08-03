@@ -1,7 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-typedef size_t unsigned long;
+typedef unsigned long size_t;
 
 /**
  * struct dlistint_s - doubly linked list
