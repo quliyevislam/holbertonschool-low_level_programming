@@ -13,7 +13,7 @@ dlistint_t *temp = *h;
 
 unsigned int i = 0;
 
-if (!idx)
+if (idx == 1)
         return (add_dnodeint(&temp, n));
 
 while (i < idx-1)
