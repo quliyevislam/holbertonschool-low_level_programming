@@ -1,4 +1,8 @@
-#include "main.h"
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
 
 /**
  * main - Copies the one file to another.
