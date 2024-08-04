@@ -12,19 +12,24 @@
  */
 int create_file(const char *file, char *text)
 {
-	int fd, w, l, c;
+	int fd;
+	int w;
+	int l = 0;
+	int c;
 
 	if (file == NULL)
 		return (-1);
 
-fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
 	if (text != NULL)
 	{
-		for (l = 0; text[l] != '\0'; l++)
-			w = write(fd, text, l);
+		while (text[l])
+			l++;
+
+		w = write(fd, text, l);
 
 		if (w == -1)
 		{
