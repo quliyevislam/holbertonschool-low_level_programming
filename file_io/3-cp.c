@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     ssize_t bytes_read, bytes_written;
     char buffer[BUFFER_SIZE];
 
-    umask(0664);
+    umask(0000);
 
     if (argc != 3) {
         print_error(97, "Usage: cp file_from file_to");
