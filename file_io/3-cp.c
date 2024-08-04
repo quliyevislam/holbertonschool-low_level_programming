@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <errno.h>  
 
 #define BUFFER_SIZE 1024
 
@@ -23,11 +22,6 @@ int main(int argc, char *argv[]) {
     }
 
     umask(0000);
-
-    if (unlink(argv[2]) == -1 && errno != ENOENT) {
-        dprintf(STDERR_FILENO, "Error: Can't delete file %s\n", argv[2]);
-        exit(99);
-    }
 
     src_fd = open(argv[1], O_RDONLY);
     if (src_fd == -1) {
