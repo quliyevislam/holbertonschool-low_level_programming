@@ -56,10 +56,10 @@ int main(int argc, char *argv[]) {
         exit(100);
     }
 
-    if (close(dest_fd) == -1) {
+    /*if (close(dest_fd) == -1) {
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
         exit(100);
-    }
+    }*/
 
     return 0;
 }
