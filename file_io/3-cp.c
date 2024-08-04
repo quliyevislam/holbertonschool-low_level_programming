@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
         exit(98);
     }
 
-    dest_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+    dest_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 1664);
     if (dest_fd == -1) {
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         close(src_fd);
