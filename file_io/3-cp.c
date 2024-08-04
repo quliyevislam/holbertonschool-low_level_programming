@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
-
+#include <sys/stat.h>
 #define BUFFER_SIZE 1024
 
 void print_error(int code, const char *message) {
