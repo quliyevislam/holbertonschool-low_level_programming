@@ -16,10 +16,10 @@ void print_binary(unsigned long int n)
 			while (bit_position >= 0)
 			{
 				if (n & (bin << bit_position))
-					putchar('1');
+					_putchar('1');
 
 				else
-					putchar('0');
+					_putchar('0');
 
 				bit_position--;
 			}
@@ -28,5 +28,5 @@ void print_binary(unsigned long int n)
 		bit_position--;
 	}
 
-	putchar('0');
+	_putchar('0');
 }
