@@ -2,45 +2,55 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-int main(int argc, char **argv)
+
+int _exit(int error, char *name, int fd)
 {
-	int fd, fd2, filecheck;
-	char buffer[1024];
+	switch (error)
+	{
+	case 97:
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(error);
+	case 98:
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", name);
+		exit(error);
+	case 99:
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", name);
+		exit(error);
+	case 100:
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(error);
+	default:
+		return (0);
+	}
+}
+
+int main(int argc, char *argv[])
+{
+	int fd_1, fd_2, r, w;
+	char *buffer[1024];
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fd2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	while ((filecheck = read(fd, buffer, 1024)) > 0)
-	{
-		if (filecheck == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-		filecheck = write(fd2, buffer, filecheck);
-		if (filecheck == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-	}
-	if (filecheck == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	if (close(fd) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd), exit(100);
-	if (close(fd2) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
+		_exit(97, NULL, 0);
 
+	fd_2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (fd_2 == -1)
+		_exit(99, argv[2], 0);
+
+	fd_1 = open(argv[1], O_RDONLY);
+	if (fd_1 == -1)
+		_exit(98, argv[1], 0);
+
+	while ((r = read(fd_1, buffer, 1024)) != 0)
+	{
+		if (r == -1)
+			_exit(98, argv[1], 0);
+
+		w = write(fd_2, buffer, r);
+		if (w == -1)
+			_exit(99, argv[2], 0);
+	}
+
+	close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
+	close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);
 	return (0);
 }
