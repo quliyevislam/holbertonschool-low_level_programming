@@ -17,7 +17,7 @@ int create_file(const char *file, char *text)
 	if (file == NULL)
 		return (-1);
 
-fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
