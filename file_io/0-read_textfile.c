@@ -14,6 +14,7 @@ fd = open(filename, O_RDONLY);
 
 n = read(fd, buf, letters);
 
+close(fd);
 write(1, buf, letters);
 
 return (n);
