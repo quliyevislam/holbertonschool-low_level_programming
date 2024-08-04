@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 			_exit(99, argv[2], 0);
 	}
 
-	close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
-	close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);
+	close(fd_2) == -1 ? (_exit(100, NULL, fd_2)) : close(fd_2);
+	close(fd_1) == -1 ? (_exit(100, NULL, fd_1)) : close(fd_1);
 	return (0);
 }
