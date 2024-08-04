@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
     ssize_t bytes_read, bytes_written;
     char buffer[BUFFER_SIZE];
 
+    umask(0000);
+
     if (argc != 3) {
         print_error(97, "Usage: cp file_from file_to");
     }
@@ -26,7 +28,7 @@ int main(int argc, char *argv[]) {
         exit(98);
     }
 
-    dest_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 1664);
+    dest_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
     if (dest_fd == -1) {
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         close(src_fd);
@@ -63,3 +65,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
