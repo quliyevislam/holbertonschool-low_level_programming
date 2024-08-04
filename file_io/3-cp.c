@@ -4,6 +4,8 @@
 #include <fcntl.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <errno.h>  
+
 #define BUFFER_SIZE 1024
 
 void print_error(int code, const char *message) {
@@ -16,10 +18,15 @@ int main(int argc, char *argv[]) {
     ssize_t bytes_read, bytes_written;
     char buffer[BUFFER_SIZE];
 
-    umask(0000);
-
     if (argc != 3) {
         print_error(97, "Usage: cp file_from file_to");
+    }
+
+    umask(0000);
+
+    if (unlink(argv[2]) == -1 && errno != ENOENT) {
+        dprintf(STDERR_FILENO, "Error: Can't delete file %s\n", argv[2]);
+        exit(99);
     }
 
     src_fd = open(argv[1], O_RDONLY);
