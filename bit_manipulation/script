@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Define the filename and string to write
+filename="101-password"
+string="Hol"
+
+# Write the string to the file
+echo -n "$string" > "$filename"
